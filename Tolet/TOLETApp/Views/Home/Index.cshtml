@@ -1,0 +1,138 @@
+﻿@model TOLETApp.ViewModels.IndexVm
+
+@{
+    ViewBag.Title = "Home Page";
+    //Layout = null;
+}
+<style>
+    form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+
+<br/>
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <center>
+                <img src="~/Image/home2.png" />
+            </center>
+            
+        </div>
+    </div>
+</section>
+
+
+<div class="row">
+    <br />
+
+    <br /><br />
+    <br />
+    <br />
+     <br />
+
+    <br /><br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Customers)
+            {
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td>@item.ContactNo</td>
+                    <td>@item.Address</td>
+                    <td>@item.Age</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <br />
+    <br />
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Area Name</th>
+                <th>ToLet From Month</th>
+                <th>Room Type</th>
+                <th>House Rent</th>
+                <th>Location</th>
+                <th>Phone Number</th>
+                <th>Note</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+                @foreach(var item in Model.ToLetPublishs)
+                {
+                    <tr>
+                        <td>@item.AreaName</td>
+                        <td>@item.ToLetFromMonth</td>
+                        <td>@item.RoomType</td>
+                        <td>@item.HouseRent</td>
+                        <td>@item.Location</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.Note</td>
+                    </tr>
+                    
+                }
+
+        </tbody>
+    </table>
+    <div class="col-md-4">
+        <h2>Contact</h2>
+        <p>This is my contact Detail.<br />
+            Water tank, Mirpur-2,Dhaka.<br />
+<abbr> Phone: 01982641791</abbr><br />
+<abbr>Email: rejakazi02@gmail.com</abbr>
+         </p>
+      </div> 
+    <div class="col-md-4">
+       
+    </div> 
+    
+    <div class="col-md-4">
+        <h2>About</h2>
+        <p>
+            d gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+    </div>
+</div>
